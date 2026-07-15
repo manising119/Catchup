@@ -18,26 +18,26 @@ createItems("🎈",8,"balloon");
 
 function createItems(icon,count,className){
 
-for(let i=0;i<count;i++){
+    for(let i=0;i<count;i++){
 
-let item=document.createElement("div");
+        let item=document.createElement("div");
 
-item.className=className;
+        item.className=className;
 
-item.innerHTML=icon;
+        item.innerHTML=icon;
 
-item.style.left=Math.random()*100+"vw";
+        item.style.left=Math.random()*100+"vw";
 
-item.style.fontSize=(15+Math.random()*25)+"px";
+        item.style.top=Math.random()*100+"vh";
 
-item.style.animationDuration=(6+Math.random()*8)+"s";
+        item.style.fontSize=(15+Math.random()*25)+"px";
 
-item.style.animationDelay=Math.random()*8+"s";
+        item.style.animationDuration=(6+Math.random()*8)+"s";
 
-document.body.appendChild(item);
+        item.style.animationDelay=Math.random()*8+"s";
 
-}
-
+        document.body.appendChild(item);
+    }
 }
 
 // ----------------------
@@ -46,14 +46,21 @@ document.body.appendChild(item);
 
 let no=document.getElementById("no");
 
-no.addEventListener("mouseover",function(){
+function moveNoButton(){
 
-let x=Math.random()*250-125;
+    let x=Math.random()*220-110;
+    let y=Math.random()*120-60;
 
-let y=Math.random()*150-75;
+    no.style.transform=`translate(${x}px,${y}px)`;
+}
 
-no.style.transform=`translate(${x}px,${y}px)`;
+no.addEventListener("mouseover",moveNoButton);
 
+no.addEventListener("touchstart",function(e){
+
+    e.preventDefault();
+
+    moveNoButton();
 });
 
 // ----------------------
@@ -62,12 +69,12 @@ no.style.transform=`translate(${x}px,${y}px)`;
 
 document.getElementById("yes").onclick=function(){
 
-document.getElementById("success").style.display="block";
+    document.getElementById("success").style.display="block";
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-window.location.href="https://wa.me/61420599795?text=Yes ❤️ I would love to see you tomorrow after work";
+        window.location.href="https://wa.me/61420599795?text=Yes ❤️ I would love to see you tomorrow after work";
 
-},1500);
+    },1500);
 
 };
