@@ -1,0 +1,65 @@
+// Floating hearts
+
+for(let i=0;i<40;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+heart.style.animationDuration=(5+Math.random()*8)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+
+
+// Moving button
+
+let no=document.getElementById("no");
+
+
+no.addEventListener("mouseover",function(){
+
+let x=Math.random()*250-125;
+
+let y=Math.random()*150-75;
+
+
+no.style.transform=
+`translate(${x}px,${y}px)`;
+
+});
+
+
+
+
+// Yes button
+
+document.getElementById("yes")
+.onclick=function(){
+
+
+document.getElementById("success")
+.style.display="block";
+
+
+
+setTimeout(()=>{
+
+
+window.location.href=
+"https://wa.me/61420599795?text=Yes ❤️ I would love to see you tomorrow after work";
+
+
+},1500);
+
+
+
+};
